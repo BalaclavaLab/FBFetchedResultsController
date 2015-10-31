@@ -208,8 +208,8 @@ static NSHashTable *allFetchedResultsControllers; // weak
   NSMutableDictionary *newUserInfo = [NSMutableDictionary dictionary];
   for (NSString *key in @[NSDeletedObjectsKey, NSRefreshedObjectsKey, NSUpdatedObjectsKey, NSInsertedObjectsKey]) {
     NSMutableSet *objects = [NSMutableSet set];
-    for (NSManagedObjectID *objectID in [notification.userInfo[key] valueForKey:@"objectID"]) {
-      id obj = [_managedObjectContext objectWithID:objectID];
+    for (NSManagedObject *object in notification.userInfo[key]) {
+      id obj = [_managedObjectContext objectWithID:object.objectID];
       if (nil != obj) {
         [objects addObject:obj];
       }
