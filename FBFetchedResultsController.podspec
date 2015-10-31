@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'FBFetchedResultsController'
-  s.version      = '0.1.0'
+  s.version      = '0.1.1'
   s.summary      = 'A drop-in replacement for NSFetchedResultsController.'
   s.description  = <<-DESC
                    A drop-in replacement for NSFetchedResultsController built to work around the fact that NSFetchedResultsController does not work with parent/child contexts.
